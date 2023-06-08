@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Список</title>
+</head>
+
+<body>
+    <select id="mus">
+        <option value="Rock">Рок</option>
+        <option value="Blues" selected>Блюз</option>
+    </select>
+    <script>
+        let selectedOption = mus.options[mus.selectedIndex];
+        let newOption = new Option("Классика", "Classic");
+        mus.append(newOption);
+        newOption.selected = true;
+        console.log(mus.options[mus.selectedIndex]);
+        console.log(selectedOption.value);
+        console.log(selectedOption.text);
+
+    </script>
+</body>
+
+</html>
