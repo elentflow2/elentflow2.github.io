@@ -1,5 +1,5 @@
 let book1 = {};
-book1.title = "KUKI";
+book1.title = "NEKIT";
 book1.pubYear = 2003;
 book1.price = 2000;
 
