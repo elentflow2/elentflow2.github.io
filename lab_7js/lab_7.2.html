@@ -1,45 +1,52 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="ru">
 
 <head>
-    <meta charset="UTF-8" />
-    <title>data-placeholder</title>
-
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>placeholder</title>
     <style>
-       .placeholder::-webkit-input-placeholder {
-            color: rgb(19, 33, 234);
-        }
+        .placeholder::placeholder {
+            color: rgb(48, 62, 255);
 
-       
+        }
+        div{
+            color: rgb(48, 62, 255);
+        }
     </style>
 
 </head>
 
 <body>
-    <form id="hhh">
-        <label for="sss"></label>
-        <input type="name" data-placeholder="name" class='placeholder' id="sss" />
-    </form>
+    <div id="texfield">
+        <label for="l"></label>
+        <input id="l" type="text" class='placeholder' data-placeholder="Введите текст">
+    </div>
+
     <script>
         'use strict';
-        let tf = document.getElementById("hhh");
 
+        let tf = document.getElementById("texfield");
         let input = tf.getElementsByTagName("input")[0];
         let lb = tf.getElementsByTagName("label")[0];
         lb.style.display = "none";
 
-        input.setAttribute("placeholder", input.dataset.placeholder); //setAttribute добавляет атрибут или изменяет значение существующего атрибута в выбранном элементе.
+        input.setAttribute("placeholder", input.dataset.placeholder);
         lb.innerHTML = input.dataset.placeholder;
 
-        input.addEventListener("blur", function () {
-            lb.style.display = "none";
-            input.setAttribute("placeholder", input.dataset.placeholder);
-        });
-
-        input.addEventListener("focus", function () { //addEventListener устанавливает функцию, которая будет вызываться всякий раз, когда указанное событие доставляется цели
+        input.addEventListener("focus", function () {
             lb.style.display = "block";
             input.setAttribute("placeholder", "");
         });
+
+        input.addEventListener("blur", function () {
+
+            lb.style.display = "none";
+            input.setAttribute("placeholder", input.dataset.placeholder);
+
+        });
+
     </script>
 </body>
 
