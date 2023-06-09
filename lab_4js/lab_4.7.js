@@ -1,5 +1,16 @@
 let date = new Date();
 function formatDate(date){
-  return date.getDate() + '.' + date.getMonth() + '.' + date.getFullYear() % 100;
+    let day = date.getDate();
+    let month = date.getMonth();
+    let year = date.getFullYear() % 100;
+    let res = ' ';
+    if (day < 10){
+        day = '0' + day;
+    }
+    if (month < 10){
+        month = '0' + month;
+    }
+    res = day + '.' + month + '.' + year;
+    return res;
 }
-alert(formatDate(date));
+console.log(formatDate(date));

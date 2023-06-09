@@ -23,8 +23,8 @@ export function getDecimal(num) {
 export function ucFirst(str) {
     if (!str) return str;
     else {
-        let NewStr = str[0].toUpperCase() + str.slice(1);
-        return NewStr;
+        let newstr = str[0].toUpperCase() + str.slice(1);
+        return newstr;
     }
 }
 
@@ -34,8 +34,8 @@ export function ucFirst(str) {
  * @return {number} true, если строка str содержит 'viagra' или 'XXX', а иначе false.
  */
 export function checkSpam(str) {
-    let NewStr = str.toLowerCase();
-    return NewStr.includes('viagra') || NewStr.includes('xxx');
+    let newstr = str.toLowerCase();
+    return newstr.includes('viagra') || newstr.includes('xxx');
 }
 
 /**
@@ -52,16 +52,16 @@ export function truncate(str, maxlength) {
 /**
  * Дефисы в строке удаляются, а все слова после них получают заглавную букву.
  * @param {str} str Проверяемая строка.
- * @return {str} StrNew, преобразованная строка.
+ * @return {str} strwew, преобразованная строка.
  */
 export function camelize(str) {
-    let STR = str.split("-");
-    let StrNew = "";
-    for (let i = 0; i <= STR.length - 1; i++) {
-        if (i == 0) StrNew = STR[0];
-        else StrNew += ucFirst(STR[i]);
-    }
-    return StrNew;
+  let words = str.split('-');
+  
+  for (let i = 1; i < words.length; i++) {
+    words[i] = ucFirst(words[i]);
+  }
+  
+  return words.join('');
 }
 /**
  * Возвращает массив, заполненный числами Фибоначчи до n-го числа (не включая его).
@@ -80,11 +80,8 @@ export function  fibs(n){
  * @return {Arr} arr, массив, отсортированный по убыванию.
  */
 export function arrReverseSorted(arr) {
-    let arr1 = arr
-    return arr1.sort(function (a, b) {
-        return b - a;
-        return arr;
-    });
+  const sorted = arr.slice().sort((a, b) => b - a);
+  return sorted;
 }
 
 /**

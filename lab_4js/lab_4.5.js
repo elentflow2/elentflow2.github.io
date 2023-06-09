@@ -6,4 +6,4 @@ function sort(a, b){
         return a.age - b.age;
     }
 people.sort(sort);
-alert(people[0].name + ' ' + people[1].name + ' ' + people[2].name);
+console.log(people[0].name + ' ' + people[1].name + ' ' + people[2].name);
