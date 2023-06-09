@@ -10,7 +10,7 @@ obj.addClass = function addClass(cls) {
     this.className = arr.join(" ");
 }
 
-obj.addClass('kuki'); 
+obj.addClass('nekit 
 obj.addClass('open'); 
 
 console.log(obj.className);
@@ -26,7 +26,7 @@ obj.removeClass = function removeClass(cls) {
     obj.className = arr.join(' ');
 }
 
-obj.removeClass('kuki'); 
-obj.removeClass('kukii');
+obj.removeClass('nekit
+obj.removeClass('nekitt
 
 console.log(obj.className);
