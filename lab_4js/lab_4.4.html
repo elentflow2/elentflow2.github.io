@@ -1,9 +1,40 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
+    <title>Создание/удаление объекта</title>
 </head>
+
 <body>
-    <script src="lab_4.4.js"></script>
+    <script>
+        "use strict";
+        let obj = {
+            className: 'open menu',
+
+            addClass(cls) {
+                let classes = this.className.split(' ');
+                if (!classes.includes(cls)) {
+                    classes.push(cls);
+                    this.className = classes.join(' ');
+                }
+                return this;
+            },
+
+            removeClass(cls) {
+                let classes = this.className.split(' ');
+                let index = classes.indexOf(cls);
+                if (index !== -1) {
+                    classes.splice(index, 1);
+                    this.className = classes.join(' ');
+                }
+                return this;
+            }
+        };
+        console.log(obj.addClass('new'));
+        console.log(obj.removeClass('open'));
+        console.log(obj.removeClass('menu'));
+    </script>
 </body>
+
 </html>

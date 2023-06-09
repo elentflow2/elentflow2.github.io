@@ -1,3 +1,4 @@
+"use strict";
 let obj = {
     className: 'open menu'
 }
@@ -10,7 +11,7 @@ obj.addClass = function addClass(cls) {
     this.className = arr.join(" ");
 }
 
-obj.addClass('nekit 
+obj.addClass('hhgr86'); 
 obj.addClass('open'); 
 
 console.log(obj.className);
@@ -26,7 +27,7 @@ obj.removeClass = function removeClass(cls) {
     obj.className = arr.join(' ');
 }
 
-obj.removeClass('nekit
-obj.removeClass('nekitt
+obj.removeClass('hhgr86'); 
+obj.removeClass('hhgr866');
 
 console.log(obj.className);

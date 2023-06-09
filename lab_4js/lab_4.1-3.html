@@ -1,9 +1,56 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
-    <meta charset="UTF-8">
+  <meta charset="utf-8">
+  <title>Книги</title>
 </head>
+
 <body>
-    <script src="lab_4.1-3.js"></script>
+  <script>
+    let book1 = {}; // создание пустого объекта book1
+    book1.title = "Гарри потер"; // добавление свойства title в объект book1
+    book1.pubYear = 1951; // добавление свойства pubYear в объект book1
+    book1.price = 10.99; // добавление свойства price в объект book1
+
+    let book2 = { // создание объекта book2 сразу с определением свойств
+      title: "Незнайка",
+      pubYear: 1960,
+      price: 12.99
+    };
+
+    // вывод свойств объектов в цикле
+    for (let prop in book1) {
+      console.log("book1." + prop + " = " + book1[prop]);
+    }
+
+    for (let prop in book2) {
+      console.log("book2." + prop + " = " + book2[prop]);
+    }
+
+    book1.show = function () { // добавление свойства show в объект book1 с функцией-выводом
+      console.log("Title: " + this.title + " | Price: $" + this.price);
+    }
+
+    function showBook() { // описание функции showBook()
+      console.log("Title: " + this.title + " | Price: $" + this.price);
+    }
+
+    book2.show = showBook; // добавление свойства show в объект book2 с функцией-выводом showBook()
+
+    book1.show(); // вызов метода show() у объекта book1
+    book2.show(); // вызов метода show() у объекта book2
+
+    function isEmpty(obj) { // описание функции isEmpty()
+      for (let key in obj) {
+        return false;
+      }
+      return true;
+    }
+
+    console.log(isEmpty(book1)); // вывод true, так как объект book1 не имеет свойств наверхнем уровне
+    console.log(isEmpty(book2)); // вывод false, так как объект book2 имеет свойства на верхнем уровне
+  </script>
 </body>
+
 </html>
