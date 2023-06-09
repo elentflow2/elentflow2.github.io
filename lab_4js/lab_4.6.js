@@ -4,4 +4,5 @@ function getSecondsToday() {
             let diff = now - today;
             return Math.round(diff / 1000);
         }
+
         console.log(getSecondsToday())
