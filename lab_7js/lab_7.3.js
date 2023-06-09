@@ -1,30 +1,21 @@
-let area = null;
-    let view = document.getElementById('view');
+    area.hidden = true;
 
-    view.onclick = function() {
-      editStart();
+    document.onkeydown = function (a) {
+      if (a.ctrlKey && a.keyCode == '69') {
+        view.hidden = true;
+        area.hidden = false;
+        area.focus()
+        area.innerHTML = view.innerHTML;
+        return false;
+      }
+
+      if (a.ctrlKey && a.keyCode == '83') {
+        view.hidden = false;
+        area.hidden = true;
+        view.innerHTML = area.value;
+        return false;
+      } else if (a.keyCode == '27') {
+        view.hidden = false;
+        area.hidden = true;
+      }
     };
-
-    function editStart() {
-      area = document.createElement('textarea');
-      area.className = 'edit';
-      area.value = view.innerHTML;
-
-      area.onkeydown = function(event) {
-        if (event.key == 'Enter') {
-          this.blur();
-        }
-      };
-
-      area.onblur = function() {
-        editEnd();
-      };
-
-      view.replaceWith(area);
-      area.focus();
-    }
-
-    function editEnd() {
-      view.innerHTML = area.value;
-      area.replaceWith(view);
-    }

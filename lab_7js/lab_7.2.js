@@ -1,26 +1,15 @@
-var placeholders = document.querySelectorAll('[data-placeholder]');
-for (var i = 0; i < placeholders.length; i++) {
-  var input = placeholders[i];
-  var placeholderText = input.getAttribute('data-placeholder'); 
-  input.value = placeholderText; 
-  input.classList.add('placeholder'); 
-  input.addEventListener('focus', onInputFocus); 
-  input.addEventListener('blur', onInputBlur); 
-}
-
-function onInputFocus(e) {
-  var input = e.target;
-  var placeholderText = input.getAttribute('data-placeholder');
-  if (input.value === placeholderText) { 
-    input.value = ''; 
-  }
-  input.classList.remove('placeholder');
-}
-
-function onInputBlur(e) {
-  var input = e.target;
-  var placeholderText = input.getAttribute('data-placeholder');
-  if (input.value === '') 
-    input.value = placeholderText; 
-    input.classList.add('placeholder');
-}
+'use strict';
+let tf = document.getElementById("hhh");
+let input = tf.getElementsByTagName("input")[0];
+let lb = tf.getElementsByTagName("label")[0];
+lb.style.display = "none";
+input.setAttribute("placeholder", input.dataset.placeholder);
+lb.innerHTML = input.dataset.placeholder;
+input.addEventListener("blur", function (){
+lb.style.display = "none";
+input.setAttribute("placeholder", input.dataset.placeholder);
+});
+input.addEventListener("focus", function (){
+lb.style.display = "block";
+input.setAttribute("placeholder", "");
+});
